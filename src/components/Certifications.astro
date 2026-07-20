@@ -1,0 +1,19 @@
+---
+const certifications = ["応用情報技術者", "基本情報技術者"];
+---
+
+<section id="certifications" class="mx-auto max-w-3xl px-6 py-16">
+	<h2 class="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+		Certifications
+	</h2>
+
+	<ul class="mt-6 space-y-2">
+		{
+			certifications.map((cert) => (
+				<li class="rounded-lg border border-neutral-800 px-4 py-3">
+					<span class="text-sm text-neutral-300">{cert}</span>
+				</li>
+			))
+		}
+	</ul>
+</section>

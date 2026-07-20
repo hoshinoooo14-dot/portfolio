@@ -1,0 +1,32 @@
+---
+import SocialIcon from "./SocialIcon.astro";
+
+const links = [
+	{ label: "GitHub", value: "hoshinoooo14-dot", href: "https://github.com/hoshinoooo14-dot", icon: "github" as const },
+	{ label: "X", value: "@s_primaStella", href: "https://x.com/s_primaStella", icon: "x" as const },
+	{ label: "Mail", value: "hoshinoooo14@gmail.com", href: "mailto:hoshinoooo14@gmail.com", icon: "mail" as const },
+];
+---
+
+<section id="links" class="mx-auto max-w-3xl px-6 py-16">
+	<h2 class="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+		Links
+	</h2>
+
+	<ul class="mt-6 space-y-2">
+		{
+			links.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						class="flex items-center gap-4 rounded-lg border border-neutral-800 px-4 py-3 transition hover:border-neutral-600 hover:bg-neutral-900/50"
+					>
+						<SocialIcon name={link.icon} class="h-5 w-5 text-neutral-400" />
+						<span class="text-sm font-medium text-neutral-200">{link.label}</span>
+						<span class="ml-auto text-sm text-neutral-500">{link.value}</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>

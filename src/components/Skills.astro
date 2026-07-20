@@ -1,0 +1,59 @@
+---
+const DEVICON_BASE = "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons";
+
+const skillGroups = [
+	{
+		category: "Languages",
+		items: [
+			{ label: "Go", icon: "go/go-original" },
+			{ label: "TypeScript", icon: "typescript/typescript-original" },
+			{ label: "Python", icon: "python/python-original" },
+		],
+	},
+	{
+		category: "Backend",
+		items: [
+			{ label: "Node.js", icon: "nodejs/nodejs-original" },
+			{ label: "PostgreSQL", icon: "postgresql/postgresql-original" },
+			{ label: "Redis", icon: "redis/redis-original" },
+		],
+	},
+	{
+		category: "Infra",
+		items: [
+			{ label: "AWS", icon: "amazonwebservices/amazonwebservices-original-wordmark" },
+			{ label: "Docker", icon: "docker/docker-original" },
+			{ label: "Terraform", icon: "terraform/terraform-original" },
+		],
+	},
+];
+---
+
+<section id="skills" class="mx-auto max-w-3xl px-6 py-16">
+	<h2 class="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+		Skills
+	</h2>
+
+	<div class="mt-6 grid gap-8 sm:grid-cols-3">
+		{
+			skillGroups.map((group) => (
+				<div>
+					<h3 class="text-sm font-medium text-neutral-300">{group.category}</h3>
+					<div class="mt-3 flex flex-col gap-2">
+						{group.items.map((item) => (
+							<div class="flex items-center gap-3 rounded-lg border border-neutral-800 px-3 py-2">
+								<img
+									src={`${DEVICON_BASE}/${item.icon}.svg`}
+									alt={item.label}
+									class="h-6 w-6 shrink-0"
+									loading="lazy"
+								/>
+								<span class="text-sm text-neutral-300">{item.label}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>
